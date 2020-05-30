@@ -10,6 +10,7 @@ import {Platform, UIManager} from 'react-native';
 
 const Stack = createStackNavigator();
 
+// for layout animations on android device
 if (Platform.OS === 'android') {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
     UIManager.setLayoutAnimationEnabledExperimental(true);

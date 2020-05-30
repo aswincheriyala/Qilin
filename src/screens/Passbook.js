@@ -61,6 +61,7 @@ export default class Passbooks extends Component {
     const {toggle, rotate, translateY, opacity} = this;
     return (
       <View style={styles.container2}>
+        {/* ===== header with toggler ===== */}
         <View style={styles.togglerContainer}>
           <View style={styles.headingContainer}>
             <Text style={styles.transaction}>Transactions (33)</Text>
@@ -71,6 +72,8 @@ export default class Passbooks extends Component {
               />
             </TouchableOpacity>
           </View>
+
+          {/* ===== animating spring bar ===== */}
           <Animated.View
             style={[
               styles.datePickerContainer,
@@ -83,7 +86,6 @@ export default class Passbooks extends Component {
               <Text style={styles.selectDateRange}>Select Date Range</Text>
               <Text style={styles.datepicker}>27-04-2020 - 12-05-2020</Text>
             </Animated.View>
-
             <Animated.View style={[styles.switchContainer, {opacity}]}>
               {TabBarButtons.map((item, index) =>
                 this.returntabBar(item, index),
@@ -91,9 +93,11 @@ export default class Passbooks extends Component {
             </Animated.View>
           </Animated.View>
         </View>
+
         <ScrollView
           contentContainerStyle={[styles.mt60, {paddingBottom: movingHeight}]}
           showsVerticalScrollIndicator={false}>
+          {/* ===== corresponding to contentContainerStyle to move entire chat ===== */}
           <Animated.View
             style={{
               transform: [{translateY}],
@@ -107,7 +111,6 @@ export default class Passbooks extends Component {
   }
 
   toggle = () => {
-    console.log(this.animValue.value);
     Animated.parallel([
       Animated.spring(this.animation1, {
         toValue: this.animValue.value < 0.5 ? 1 : 0,

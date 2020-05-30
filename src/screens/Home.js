@@ -25,7 +25,11 @@ const Home = ({navigation}) => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={colors.primary} />
+
+      {/* ===== curved background color ===== */}
       <View style={styles.curve} />
+
+      {/* ===== profile ===== */}
       <View style={styles.flex}>
         <View style={styles.profileContainer}>
           <Image
@@ -37,11 +41,15 @@ const Home = ({navigation}) => {
             <Text style={styles.number}>9972043977710001</Text>
           </View>
         </View>
+
+        {/* ===== buttons  ===== */}
         <View style={styles.optionContainer}>
           {homeButtons.map((item) => button(item))}
         </View>
       </View>
+
       <View style={styles.flex2}>
+        {/* ===== card above the curve ===== */}
         <View style={styles.firstCardContainer}>
           <ImageBackground
             source={require('../assets/images/couponbg.png')}
@@ -58,6 +66,8 @@ const Home = ({navigation}) => {
             </View>
           </ImageBackground>
         </View>
+
+        {/* ===== bottom card ===== */}
         <View style={styles.secondCardContainer}>
           <ImageBackground
             source={require('../assets/images/c1.png')}
